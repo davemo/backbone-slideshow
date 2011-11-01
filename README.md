@@ -7,6 +7,14 @@ A simple backbone.js powered slideshow. Great for satisfying those markety-types
 
 A working demo of v0.1 is up on [jsfiddle](http://jsfiddle.net/dmosher/wNATp/)
 
+## Features
+
+* Rotates between any number of slides
+* Generates controls for each slide
+* Play/Pause toggle button 
+* Collapsible (pauses when hidden, plays when shown)
+* Jump to any given slide by clicking on the corresponding control (triggers pause)
+
 ## Dependencies
 
 * [underscore.js](http://documentcloud.github.com/underscore/)
