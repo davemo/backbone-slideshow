@@ -7,6 +7,10 @@ A simple backbone.js powered slideshow. Great for satisfying those markety-types
 
 A working demo of v0.1 is up on [jsfiddle](http://jsfiddle.net/dmosher/wNATp/)
 
+## Preview
+
+![backbone-slideshow preview](https://github.com/davemo/backbone-slideshow/raw/master/lib/img/preview.png)
+
 ## Features
 
 * Rotates between any number of slides
