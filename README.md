@@ -63,6 +63,7 @@ These things are a list of 'nice-to-haves' that I'll probably get around to
 * API for creating a slideshow completely via js (ie: no html template deps) -> new APP.Views.Slideshow({ container: "#myContainer", slides: myCollection }).render();
 * Configurable Image paths via js (they're hardcoded in the client-side templates right now)
 * CoffeeScript version
+* Package this thing up for standalone use (it was extracted from an existing app and could use some "standalone" love) :)
 
 ## Acknowledgments
 
