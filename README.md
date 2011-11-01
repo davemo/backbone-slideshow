@@ -16,6 +16,7 @@ A basic working demo is up on [jsfiddle](http://jsfiddle.net/dmosher/wNATp/)
 * Play/Pause toggle button 
 * Collapsible (pauses when hidden, plays when shown)
 * Jump to any given slide by clicking on the corresponding control (triggers pause)
+* Slide background images and text can be aligned "left" or "right"
 
 ## Usage
 
@@ -32,7 +33,7 @@ A basic working demo is up on [jsfiddle](http://jsfiddle.net/dmosher/wNATp/)
           id: 1,
           headline: 'Heffalumps',
           caption: 'and woozles',
-          layout: 'left' // optional
+          layout: 'left' // options: 'left', 'right' -> controls layout of text and images in slides
         } //... etc
       ]);
       var slideshow = new APP.Views.Slideshow().render();
