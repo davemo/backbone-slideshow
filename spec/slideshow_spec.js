@@ -1,6 +1,6 @@
 describe('Slideshow View', function() {
   
-  var view, models, slideshow, slides, controls, events;
+  var view, slideOne, slideTwo, slideThree, slideshow, slides, controls, events;
 
   beforeEach(function() {
     spyOn(window, 'setInterval');
@@ -9,14 +9,10 @@ describe('Slideshow View', function() {
     slideshow = inject('<div id="slideshow"><ul class="slides"></ul><ul class="controls"><li class="slide-control toggle-play-pause"></li></ul></div>');
     slides = slideshow.find('.slides');
     controls = slideshow.find('.controls');
-    models = [
-       {id:1},
-       {id:2},
-       {id:3}
-    ];
-    view = new APP.Views.Slideshow({collection: new APP.Collections.Slides(models)});
-
-    spyOn(view, 'initialPlay');
+    slideOne = new APP.Models.Slide({id:1});
+    slideTwo = new APP.Models.Slide({id:2});    
+    slideThree = new APP.Models.Slide({id:3});    
+    view = new APP.Views.Slideshow({collection: new APP.Collections.Slides([slideOne, slideTwo, slideThree])});
   });
   
   describe('DOM node references', function() {
@@ -71,6 +67,7 @@ describe('Slideshow View', function() {
   describe('#render', function() {
 
     beforeEach(function() {
+      spyOn(view, 'start');
       view.render();
     });
 
@@ -88,8 +85,8 @@ describe('Slideshow View', function() {
       expect($('.slide:first')).toBeVisible();
     });
 
-    it('initializes play', function() {
-      expect(view.initialPlay).toHaveBeenCalled();
+    it('starts play', function() {
+      expect(view.start).toHaveBeenCalled();
     });
   });
 
@@ -165,6 +162,22 @@ describe('Slideshow View', function() {
         expect(slides).toBeVisible();
         expect(slideshow).not.toHaveClass('collapsed');
       });
+    });
+  });
+  
+  describe('#start', function() {
+    beforeEach(function() {
+      spyOn(slideOne, 'show');
+      spyOn($.fn, 'toggleClass');
+      view.start();
+    });
+    
+    it('shows the dom element that corresponds to the first element in the slides collection', function() {
+      expect(slideOne.show).toHaveBeenCalled();
+    });
+    
+    it('toggles the class "current" on the control that represents the first element in the slides collection', function() {
+      expect($.fn.toggleClass).toHaveBeenCalledWith('current');
     });
   });
 
