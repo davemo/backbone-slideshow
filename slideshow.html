@@ -8,6 +8,7 @@
 </head>
 <body>
   
+  <!-- markup dependencies -->
   <div id="slideshow">
     <ul class="slides"></ul>
     <ul class="controls">
@@ -16,6 +17,7 @@
     <span class="toggler icon"></span>
   </div>
   
+  <!-- dynamic markup (aka: template) dependencies -->
   <script id="slide-template" type="text/html">
     <li id="slide-{{ id }}" class="slide {{ layout }}" style="background: url(http://davemo.com/jsfiddle/slideshow/{{ id }}.jpg) no-repeat;">
       <p class="headline">{{ headline }}</p>
@@ -26,6 +28,7 @@
     <li class="slide-control jump-to" data-index="{{ index }}">{{ human_readable_index }}</li>
   </script>
   
+  <!-- 3rd party library dependencies -->
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.1.7/underscore-min.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/0.5.3/backbone-min.js"></script>
@@ -37,6 +40,7 @@
     };
   </script>
   
+  <!-- Our libs -->
   <script src="lib/js/app.js"></script>
   <script src="lib/js/slideshow.js"></script>
   
