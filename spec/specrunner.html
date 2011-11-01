@@ -5,19 +5,19 @@
   <title>Backbone Slideshow Specs</title>
   <link rel="stylesheet" type="text/css" href="vendor/jasmine-1.1.0/jasmine.css" media="all" />
   
-  <!-- deps -->
+  <!-- js dependencies -->
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.1.7/underscore-min.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/0.5.3/backbone-min.js"></script>
   
-  <!-- specrunner -->
+  <!-- specrunner dependencies -->
   <script type="text/javascript" src="vendor/jasmine-1.1.0/jasmine.js"></script>
   <script type="text/javascript" src="vendor/jasmine-1.1.0/jasmine-html.js"></script>
   <script type="text/javascript" src="vendor/jasmine-1.1.0/jasmine.fixture.js"></script>
   <script type="text/javascript" src="vendor/jasmine-1.1.0/jasmine.jquery.js"></script>
   <script type="text/javascript" src="lib/matchers.js"></script>
   
-  <!-- templates -->
+  <!-- template dependencies -->
   <script id="slide-template" type="text/html">
     <li id="slide-{{ id }}" class="slide {{ layout }}" style="background: url(http://davemo.com/jsfiddle/slideshow/{{ id }}.jpg) no-repeat;">
       <p class="headline">{{ headline }}</p>
@@ -29,6 +29,7 @@
   </script>
   
   <!-- src -->
+  <script type="text/javascript" src="../lib/app.js"></script>
   <script type="text/javascript" src="../lib/slideshow.js"></script>
   
   <!-- spec -->

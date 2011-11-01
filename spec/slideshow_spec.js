@@ -18,6 +18,44 @@ describe('Slideshow View', function() {
 
     spyOn(view, 'initialPlay');
   });
+  
+  describe('DOM node references', function() {
+    describe('el', function() {
+      it('binds to #slideshow', function() {
+        expect($(view.el)).toHaveId('slideshow');
+      });
+    });
+
+    describe('slides', function() {
+      it('lives in #slideshow', function() {
+        expect(view.slides).toBe('#slideshow .slides');
+      });
+    });
+
+    describe('controls', function() {
+      it('lives in #slideshow .controls', function() {
+        expect(view.controls).toBe('#slideshow .controls');
+      });
+    });
+    
+    describe('playPauseControl', function() {
+      it('lives in #slideshow .controls .toggle-play-pause', function() {
+        expect(view.playPauseControl).toBe('#slideshow .controls .toggle-play-pause');
+      });
+    });
+  });
+
+  describe('the default slide transition time period', function() {
+    it('is set to 10 seconds', function() {
+      expect(view.delay).toBe(10000);
+    });
+  });
+
+  describe('the default starting slide index', function() {
+    it('starts at the first slide', function() {
+      expect(view.currentIndex).toBe(0);
+    });
+  });
 
   describe('events', function() {
     it('defines these default events', function() {
