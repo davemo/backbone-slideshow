@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>Backbone Slideshow Specs</title>
+  <link rel="stylesheet" type="text/css" href="vendor/jasmine-1.1.0/jasmine.css" media="all" />
+  
+  <!-- deps -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.1.7/underscore-min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/0.5.3/backbone-min.js"></script>
+  
+  <!-- specrunner -->
+  <script type="text/javascript" src="vendor/jasmine-1.1.0/jasmine.js"></script>
+  <script type="text/javascript" src="vendor/jasmine-1.1.0/jasmine-html.js"></script>
+  <script type="text/javascript" src="vendor/jasmine-1.1.0/jasmine.fixture.js"></script>
+  <script type="text/javascript" src="vendor/jasmine-1.1.0/jasmine.jquery.js"></script>
+  <script type="text/javascript" src="lib/matchers.js"></script>
+  
+  <!-- templates -->
+  <script id="slide-template" type="text/html">
+    <li id="slide-{{ id }}" class="slide {{ layout }}" style="background: url(http://davemo.com/jsfiddle/slideshow/{{ id }}.jpg) no-repeat;">
+      <p class="headline">{{ headline }}</p>
+      <p class="caption">{{ caption }}</p>
+    </li>
+  </script>
+  <script id="controls-template" type="text/html">
+    <li class="slide-control jump-to" data-index="{{ index }}">{{ human_readable_index }}</li>
+  </script>
+  
+  <!-- src -->
+  <script type="text/javascript" src="../lib/slideshow.js"></script>
+  
+  <!-- spec -->
+  <script type="text/javascript" src="slideshow_spec.js"></script>
+  
+  <script type="text/javascript">
+    (function() {
+      var jasmineEnv = jasmine.getEnv();
+      jasmineEnv.updateInterval = 1000;
+
+      var trivialReporter = new jasmine.TrivialReporter();
+
+      jasmineEnv.addReporter(trivialReporter);
+
+      jasmineEnv.specFilter = function(spec) {
+        return trivialReporter.specFilter(spec);
+      };
+
+      var currentWindowOnload = window.onload;
+
+      window.onload = function() {
+        if (currentWindowOnload) {
+          currentWindowOnload();
+        }
+        execJasmine();
+      };
+
+      function execJasmine() {
+        jasmineEnv.execute();
+      }
+
+    })();
+  </script>
+  
+</head>
+<body>
+  
+</body>
+</html>

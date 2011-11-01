@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="reset.css" media="all" />
+  <link rel="stylesheet" type="text/css" href="slideshow.css" media="all" />
+</head>
+<body>
+  
+  <div id="slideshow">
+    <ul class="slides"></ul>
+    <ul class="controls">
+      <li class="slide-control toggle-play-pause icon">&nbsp;</li>
+    </ul>
+    <span class="toggler icon"></span>
+  </div>
+  
+  <script id="slide-template" type="text/html">
+    <li id="slide-{{ id }}" class="slide {{ layout }}" style="background: url(http://davemo.com/jsfiddle/slideshow/{{ id }}.jpg) no-repeat;">
+      <p class="headline">{{ headline }}</p>
+      <p class="caption">{{ caption }}</p>
+    </li>
+  </script>
+  <script id="controls-template" type="text/html">
+    <li class="slide-control jump-to" data-index="{{ index }}">{{ human_readable_index }}</li>
+  </script>
+  
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.1.7/underscore-min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/0.5.3/backbone-min.js"></script>
+
+  <script>
+    // configuration for underscores template syntax
+    _.templateSettings = {
+      interpolate: /\{\{(.+?)\}\}/g
+    };
+  </script>
+  
+  <script src="lib/slideshow.js"></script>
+  
+  <script>
+    APP.Slideshow = new APP.Views.Slideshow({
+        collection: new APP.Collections.Slides([
+            {
+                id: 1,
+                headline: 'Welcome to APP',
+                caption: 'The best online tool for stuff.',
+                layout: 'left'
+            },
+            {
+                id: 2,
+                headline: 'Thousands of Products',
+                caption: 'APP provides a huge catalogue of stuff.<br/> Search the below to get started.'
+            },
+            {
+                id: 3,
+                headline: 'Mobile Ready',
+                caption: 'Are you ready for the mobile web?'
+            },
+            {
+                id: 4,
+                headline: 'Rich Media',
+                caption: 'Search the APP for access to thousands of videos and audio files to enrich your stuff.'
+            },
+            {
+                id: 5,
+                headline: 'Built for Medical Professionals',
+                caption: 'APP provides tools for people that allow you to manage and organize your purchases with ease.'
+            }
+        ])
+    }).render();
+  </script>
+  
+</body>
+</html>
