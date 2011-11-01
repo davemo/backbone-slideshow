@@ -1,0 +1,130 @@
+body {
+  margin-top: 20px;
+}
+
+.icon {
+    background-image: url(http://davemo.com/jsfiddle/slideshow/icons-v.png);
+    background-repeat: no-repeat;
+}
+
+#slideshow {
+    height: 150px;
+    border: 1px solid #ccc;
+    position: relative;
+    width: 750px;
+    margin: 0 auto;
+}
+
+#slideshow.collapsed {
+    height: 20px;
+    border: none;
+    border-top: 1px solid #ccc;
+}
+
+.slides {
+    overflow: hidden;
+}
+
+.slide {
+    height: 150px;
+    position: relative;
+    display: none; /** slides are hidden by default **/
+}
+
+.slide.right {
+    background-position: right !important;
+}
+
+.slide.left {
+    background-position: left !important;
+}
+
+.slide .headline {
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.slide .caption {
+    color: #999;
+}
+
+.slide .headline,
+.slide .caption {
+    position: absolute;
+}
+
+.slide.right .headline {
+    top: 20px;
+    left: 30px;
+}
+
+.slide.right .caption {
+    left: 30px;
+    top: 70px;
+}
+
+.slide.left .headline {
+    top: 20px;
+    right: 30px;
+}
+
+.slide.left .caption {
+    top: 70px;
+    right: 30px;
+}
+
+#slideshow .toggler {
+    display: block;
+    height: 19px;
+    width: 19px;
+    background-color: white;
+    background-position: 0 -493px;
+    border: 1px solid #CCCCCC;
+    bottom: -1px;
+    color: black;
+    position: absolute;
+    right: -1px;
+}
+
+#slideshow.collapsed .toggler {
+    right: 0;
+    bottom: 0;
+    background-position: 0 -438px;
+}
+
+#slideshow .controls {
+    position: absolute;
+    bottom: -1px;
+    left: -1px;
+}
+
+#slideshow.collapsed .controls {
+    display: none;
+}
+
+#slideshow .toggler:hover,
+.slide-control:hover,
+.jump-to.current {
+    cursor: pointer;
+    background-color: #333;
+    color: white;
+}
+
+.toggle-play-pause {
+    background-position: 0 -527px;
+}
+
+.toggle-play-pause.playing {
+    background-position: 0 -509px;
+}
+
+.slide-control {
+    display: inline-block;
+    width: 20px;
+    height: 17px;
+    padding-top: 3px;
+    text-align: center;
+    margin-right: -5px;
+    border: 1px solid #ccc;
+    background-color: white;
+}
