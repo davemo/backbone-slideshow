@@ -3,6 +3,10 @@ backbone-slideshow
 
 A simple backbone.js powered slideshow. Great for satisfying those markety-types, who want a "rotating slide thingy", without having to use a jquery plugin.
 
+## Demo
+
+A working demo of v0.1 is up on [jsfiddle](http://jsfiddle.net/dmosher/wNATp/)
+
 ## Dependencies
 
 * [underscore.js](http://documentcloud.github.com/underscore/)
