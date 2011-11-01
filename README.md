@@ -19,11 +19,11 @@ A basic working demo is up on [jsfiddle](http://jsfiddle.net/dmosher/wNATp/)
 
 ## Usage
 
-** include lib/css/slideshow.css into your page.
-** mixin the contents of lib/js/app.js into your apps .Models, .Views and .Collections namespaces.
-** include lib/js/slideshow.js into your page.
-** include the 2 client-side templates (#slide-template and #controls-template) from slideshow.html into your page or however you add templates to your app/page.
-** include the boilerplate markup (#slideshow) from slideshow.html into your page.
+* include lib/css/slideshow.css into your page.
+* mixin the contents of lib/js/app.js into your apps .Models, .Views and .Collections namespaces.
+* include lib/js/slideshow.js into your page.
+* include the 2 client-side templates (#slide-template and #controls-template) from slideshow.html into your page or however you add templates to your app/page.
+* include the boilerplate markup (#slideshow) from slideshow.html into your page.
 
 ## Declaration
     <script>
