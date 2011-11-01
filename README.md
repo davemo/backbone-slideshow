@@ -1,7 +1,7 @@
 backbone-slideshow
 ====================
 
-A simple backbone.js powered slideshow. Great for satisfying those markety-types, who want a "rotating slide thingy", without having to use a jquery plugin.
+A simple backbone.js powered slideshow. Great for satisfying those markety-types, who want a "rotating slide thingy", without having to use a jQuery plugin.
 
 ## Demo
 
